@@ -5,23 +5,23 @@ import { Code, Palette, Zap, Users } from "lucide-react";
 const values = [
   {
     icon: Code,
-    title: "Clean Code",
-    description: "Writing maintainable, scalable code that stands the test of time.",
+    title: "Infrastructure as Code",
+    description: "Automating everything. Reproducible, version-controlled infrastructure.",
   },
   {
     icon: Palette,
-    title: "Design-First",
-    description: "Every pixel matters. Crafting interfaces that delight users.",
+    title: "Cloud-Native Design",
+    description: "Building for scale from day one with containerized, distributed systems.",
   },
   {
     icon: Zap,
-    title: "Performance",
-    description: "Obsessed with speed. Sub-second load times are non-negotiable.",
+    title: "Reliability",
+    description: "99.99% uptime is the baseline. Resilient systems that self-heal.",
   },
   {
     icon: Users,
-    title: "Collaboration",
-    description: "Great products are built by great teams. Communication is key.",
+    title: "DevOps Culture",
+    description: "Breaking silos. Empowering teams with self-service platforms.",
   },
 ];
 
@@ -61,16 +61,16 @@ const About = () => {
               className="space-y-6 text-muted-foreground leading-relaxed"
             >
               <p>
-                I'm a full-stack developer with 5+ years of experience creating 
-                digital products that matter. My journey started with a curiosity 
-                for how things work and evolved into a passion for building 
-                experiences that people love to use.
+                I'm a cloud engineer and software developer with 5+ years of experience 
+                designing and implementing scalable infrastructure. My journey started 
+                with curiosity about distributed systems and evolved into a passion for 
+                building resilient, cloud-native architectures.
               </p>
               <p>
-                Currently focused on crafting performant applications using React 
-                and Django, I believe in the power of thoughtful design combined 
-                with robust engineering. Every project is an opportunity to push 
-                boundaries and deliver something exceptional.
+                Currently focused on Kubernetes, AWS, and infrastructure automation, 
+                I believe in treating infrastructure as code and empowering development 
+                teams with self-service platforms. Every system I build prioritizes 
+                reliability, security, and operational excellence.
               </p>
             </motion.div>
             

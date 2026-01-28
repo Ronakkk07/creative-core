@@ -52,8 +52,8 @@ const Contact = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-muted-foreground text-lg mb-12"
             >
-              Have a project in mind? Looking for a developer who cares about craft? 
-              I'd love to hear from you. Let's create something extraordinary.
+              Need help with cloud architecture or scaling your infrastructure? 
+              Looking for a reliable engineer to build your platform? Let's talk.
             </motion.p>
             
             {/* Contact info */}

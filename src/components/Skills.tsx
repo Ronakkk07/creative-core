@@ -3,43 +3,43 @@ import { useRef, useState } from "react";
 
 const skillCategories = [
   {
-    name: "Frontend",
+    name: "Cloud Platforms",
     skills: [
-      { name: "React", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Next.js", level: 85 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "Framer Motion", level: 80 },
+      { name: "AWS", level: 95 },
+      { name: "Azure", level: 88 },
+      { name: "Google Cloud", level: 82 },
+      { name: "DigitalOcean", level: 85 },
+      { name: "Cloudflare", level: 80 },
     ],
   },
   {
-    name: "Backend",
+    name: "DevOps & Infrastructure",
     skills: [
-      { name: "Django", level: 90 },
+      { name: "Kubernetes", level: 92 },
+      { name: "Docker", level: 95 },
+      { name: "Terraform", level: 90 },
+      { name: "Ansible", level: 85 },
+      { name: "CI/CD Pipelines", level: 92 },
+    ],
+  },
+  {
+    name: "Development",
+    skills: [
       { name: "Python", level: 92 },
-      { name: "PostgreSQL", level: 85 },
-      { name: "REST APIs", level: 90 },
-      { name: "GraphQL", level: 75 },
+      { name: "Go", level: 85 },
+      { name: "TypeScript", level: 88 },
+      { name: "Node.js", level: 85 },
+      { name: "React", level: 82 },
     ],
   },
   {
-    name: "DevOps",
+    name: "Databases & Tools",
     skills: [
-      { name: "Docker", level: 85 },
-      { name: "GitHub Actions", level: 80 },
-      { name: "AWS", level: 70 },
-      { name: "Linux", level: 75 },
-      { name: "Nginx", level: 70 },
-    ],
-  },
-  {
-    name: "Tools",
-    skills: [
+      { name: "PostgreSQL", level: 90 },
+      { name: "MongoDB", level: 85 },
+      { name: "Redis", level: 88 },
+      { name: "Elasticsearch", level: 80 },
       { name: "Git", level: 95 },
-      { name: "Figma", level: 80 },
-      { name: "VS Code", level: 95 },
-      { name: "Postman", level: 85 },
-      { name: "Jira", level: 80 },
     ],
   },
 ];
@@ -141,10 +141,10 @@ const Skills = () => {
           className="mt-20 p-8 rounded-3xl glass text-center"
         >
           <p className="text-muted-foreground mb-6">
-            My preferred stack for building modern applications
+            My preferred stack for cloud-native applications
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            {["React", "TypeScript", "Django", "PostgreSQL", "Docker", "GitHub Actions"].map(
+            {["AWS", "Kubernetes", "Terraform", "Python", "Docker", "PostgreSQL"].map(
               (tech, index) => (
                 <motion.span
                   key={tech}
