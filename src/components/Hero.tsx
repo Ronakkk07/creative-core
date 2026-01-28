@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Sparkles } from "lucide-react";
 
 const Hero = () => {
-  const titleWords = ["Crafting", "Digital", "Experiences"];
+  const titleWords = ["Building", "Cloud", "Solutions"];
   
   return (
     <section className="relative min-h-screen flex items-center justify-center section-padding overflow-hidden">
@@ -34,7 +34,7 @@ const Hero = () => {
           >
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-mono text-muted-foreground tracking-wider uppercase">
-              Full-Stack Developer & Designer
+              Cloud Engineer & Software Developer
             </span>
           </motion.div>
           
@@ -64,8 +64,8 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground max-w-xl mb-12 leading-relaxed"
           >
-            I transform complex problems into elegant, intuitive solutions. 
-            Building performant applications with React, Django, and a passion for exceptional user experiences.
+            I architect scalable cloud infrastructure and build robust software solutions. 
+            Specializing in AWS, Kubernetes, and full-stack development with a focus on automation and reliability.
           </motion.p>
           
           {/* CTAs */}
