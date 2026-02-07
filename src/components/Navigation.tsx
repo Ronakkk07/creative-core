@@ -41,7 +41,7 @@ const Navigation = () => {
               className="text-xl font-bold font-display"
               whileHover={{ scale: 1.05 }}
             >
-              <span className="text-gradient-accent">JD</span>
+              <span className="text-gradient-accent">Ronak Rajput</span>
             </motion.a>
             
             {/* Desktop Navigation */}
@@ -65,7 +65,7 @@ const Navigation = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Let's Talk
+              Imp Links
             </motion.a>
             
             {/* Mobile Menu Button */}
@@ -90,7 +90,7 @@ const Navigation = () => {
         <div className="absolute inset-0 bg-background">
           <div className="flex flex-col h-full p-6">
             <div className="flex items-center justify-between mb-12">
-              <span className="text-xl font-bold font-display text-gradient-accent">JD</span>
+              <span className="text-xl font-bold font-display text-gradient-accent">Ronak Rajput</span>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-2"
@@ -129,7 +129,7 @@ const Navigation = () => {
               transition={{ delay: 0.5 }}
               className="w-full py-4 px-6 rounded-xl bg-primary text-primary-foreground font-semibold text-center"
             >
-              Let's Talk
+              Imp Links
             </motion.a>
           </div>
         </div>

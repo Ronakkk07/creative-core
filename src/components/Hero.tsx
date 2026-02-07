@@ -1,11 +1,30 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Sparkles } from "lucide-react";
+import { useEffect, useState } from "react";
+import { fetchHeroData } from "@/services/api";
+
+interface HeroData {
+  eyebrow_text: string;
+  title_words: string[];
+  subtitle: string;
+  // primary_cta_text: string;
+  // primary_cta_link: string;
+  // secondary_cta_text: string;
+  // secondary_cta_link: string;
+}
 
 const Hero = () => {
-  const titleWords = ["Building", "Cloud", "Solutions"];
-  
+  const [data, setData] = useState<HeroData | null>(null);
+
+  useEffect(() => {
+    fetchHeroData()
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center section-padding overflow-hidden">
+      
       {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -19,12 +38,13 @@ const Hero = () => {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
-      
+
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] pointer-events-none" />
-      
+
       <div className="container-custom relative z-10">
         <div className="max-w-5xl">
+
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -34,15 +54,15 @@ const Hero = () => {
           >
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-mono text-muted-foreground tracking-wider uppercase">
-              Cloud Engineer & Software Developer
+              {data?.eyebrow_text}
             </span>
           </motion.div>
-          
-          {/* Main title with staggered animation */}
+
+          {/* Main title */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-8">
-            {titleWords.map((word, index) => (
+            {data?.title_words?.map((word, index) => (
               <motion.span
-                key={word}
+                key={`${word}-${index}`}
                 initial={{ opacity: 0, y: 80 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -50,13 +70,15 @@ const Hero = () => {
                   delay: index * 0.15,
                   ease: [0.4, 0, 0.2, 1],
                 }}
-                className={`block ${index === 1 ? "text-gradient-accent" : ""}`}
+                className={`block ${
+                  index === 1 ? "text-gradient-accent" : ""
+                }`}
               >
                 {word}
               </motion.span>
             ))}
           </h1>
-          
+
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -64,10 +86,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground max-w-xl mb-12 leading-relaxed"
           >
-            I architect scalable cloud infrastructure and build robust software solutions. 
-            Specializing in AWS, Kubernetes, and full-stack development with a focus on automation and reliability.
+            {data?.subtitle}
           </motion.p>
-          
+
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -76,22 +97,22 @@ const Hero = () => {
             className="flex flex-wrap gap-4"
           >
             <motion.a
-              href="#projects"
+              href= "#projects"
               className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full magnetic-hover"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
               View My Work
               <motion.span
-                className="inline-block"
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
                 →
               </motion.span>
             </motion.a>
+
             <motion.a
-              href="#contact"
+              href= "#contact"
               className="inline-flex items-center gap-3 px-8 py-4 border border-border text-foreground font-semibold rounded-full magnetic-hover hover:bg-secondary transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
@@ -100,7 +121,7 @@ const Hero = () => {
             </motion.a>
           </motion.div>
         </div>
-        
+
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
