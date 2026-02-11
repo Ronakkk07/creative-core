@@ -93,17 +93,23 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
-
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'final_portfolio_data',
-        'USER': 'postgres',
-        'PASSWORD': 'ronak',
-        'HOST': '127.0.0.1', #can deploy it on aws
-        'PORT': '5432',
-    }
+    "default": dj_database_url.config(
+        default=os.getenv("DATABASE_URL")
+    )
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'final_portfolio_data',
+#         'USER': 'postgres',
+#         'PASSWORD': 'ronak',
+#         'HOST': '127.0.0.1', #can deploy it on aws
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
