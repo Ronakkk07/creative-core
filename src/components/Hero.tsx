@@ -60,7 +60,7 @@ const Hero = () => {
 
           {/* Main title */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-8">
-            {data?.title_words?.map((word, index) => (
+            {(data?.title_words || []).map((word, index) => (
               <motion.span
                 key={`${word}-${index}`}
                 initial={{ opacity: 0, y: 80 }}
